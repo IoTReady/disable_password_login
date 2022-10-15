@@ -1,4 +1,5 @@
 import frappe
+from frappe.utils.password import update_password
 
 
 def disable_password(doc, event):
@@ -11,5 +12,5 @@ def disable_password(doc, event):
     allowed_users = [row.user for row in config.allow_password_login_table]
     if doc.name == 'Administrator' or doc.name in allowed_users:
         return False
-    doc.password = None
+    update_password(doc.namae, "")
     return True
