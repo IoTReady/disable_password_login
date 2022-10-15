@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include disable_password_login *.css
+recursive-include disable_password_login *.csv
+recursive-include disable_password_login *.html
+recursive-include disable_password_login *.ico
+recursive-include disable_password_login *.js
+recursive-include disable_password_login *.json
+recursive-include disable_password_login *.md
+recursive-include disable_password_login *.png
+recursive-include disable_password_login *.py
+recursive-include disable_password_login *.svg
+recursive-include disable_password_login *.txt
+recursive-exclude disable_password_login *.pyc
