@@ -2,7 +2,7 @@ import frappe
 from frappe.utils.password import update_password
 
 
-def disable_password(doc, event):
+def disable_password(doc, event=None):
     assert doc.doctype == 'User', "Only valid for User doctype"
     if not frappe.db.count('Social Login Key', filters={'enable_social_login': 1}) > 0:
         return False
@@ -12,5 +12,5 @@ def disable_password(doc, event):
     allowed_users = [row.user for row in config.allow_password_login_table]
     if doc.name == 'Administrator' or doc.name in allowed_users:
         return False
-    update_password(doc.namae, "")
+    update_password(doc.name, "")
     return True
